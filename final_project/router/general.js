@@ -5,6 +5,11 @@ let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
 const public_users = express.Router();
 
+// Add this route here
+public_users.get('/books', function (req, res) {
+  return res.status(200).json(books);
+});
+
 // Register a new user
 public_users.post("/register", (req, res) => {
   const { username, password } = req.body;
